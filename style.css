@@ -1,0 +1,188 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #e74c3c;
+    --success: #27ae60;
+    --bg: #f4f7f6;
+    --text: #333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#game-container {
+    width: 90%;
+    max-width: 600px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 1rem;
+}
+
+h1 { color: var(--primary); margin: 0; }
+#game-status { color: #666; font-style: italic; }
+
+.view {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hidden { display: none !important; }
+
+/* Setup View */
+#penalty-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+input[type="text"] {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover { background-color: var(--secondary); }
+
+/* Game View */
+#chat-history {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.message {
+    padding: 0.5rem 1rem;
+    border-radius: 18px;
+    max-width: 80%;
+}
+
+.message.guesser {
+    align-self: flex-end;
+    background-color: var(--primary);
+    color: white;
+}
+
+.message.system {
+    align-self: center;
+    background-color: #eee;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+#mastermind-panel {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#mastermind-panel h3 { margin-top: 0; font-size: 1rem; }
+.small { font-size: 0.8rem; color: #856404; margin-bottom: 0.5rem; }
+
+#penalty-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#penalty-checks label {
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background-color: #95a5a6;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
+#input-area {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#guesser-input { flex-grow: 1; }
+
+#stats {
+    text-align: center;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+/* Result View */
+#result-view { text-align: center; }
+#result-title { font-size: 2.5rem; margin-bottom: 1rem; }
+.victory { color: var(--success); }
+.defeat { color: var(--accent); }
+
+#result-details {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+#penalty-reveal {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+#penalty-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#penalty-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #ddd;
+}

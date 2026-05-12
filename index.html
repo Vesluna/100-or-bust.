@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100% or Bust</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>100% or Bust</h1>
+            <p id="game-status">Setup Phase: Mastermind, set your penalties.</p>
+        </header>
+
+        <!-- Mastermind Setup View -->
+        <div id="setup-view" class="view">
+            <h2>Mastermind Setup</h2>
+            <p>Select 5 hidden penalty triggers. These will be applied to the Guesser's final score.</p>
+            <div id="penalty-inputs">
+                <div class="input-group">
+                    <label>Penalty 1 (-1 pt):</label>
+                    <input type="text" id="p1" placeholder="e.g., uses emojis">
+                </div>
+                <div class="input-group">
+                    <label>Penalty 2 (-2 pts):</label>
+                    <input type="text" id="p2" placeholder="e.g., more than 10 words">
+                </div>
+                <div class="input-group">
+                    <label>Penalty 3 (-3 pts):</label>
+                    <input type="text" id="p3" placeholder="e.g., uses the word 'the'">
+                </div>
+                <div class="input-group">
+                    <label>Penalty 4 (-4 pts):</label>
+                    <input type="text" id="p4" placeholder="e.g., no punctuation">
+                </div>
+                <div class="input-group">
+                    <label>Penalty 5 (-5 pts):</label>
+                    <input type="text" id="p5" placeholder="e.g., all lowercase">
+                </div>
+            </div>
+            <button id="start-game-btn">Start Game</button>
+        </div>
+
+        <!-- Game View -->
+        <div id="game-view" class="view hidden">
+            <div id="mastermind-panel">
+                <h3>Mastermind Controls</h3>
+                <p class="small">Mark penalties as they are triggered. Game ends if all 5 are checked.</p>
+                <div id="penalty-checks">
+                    <label><input type="checkbox" class="penalty-check" data-index="0"> #1 (-1)</label>
+                    <label><input type="checkbox" class="penalty-check" data-index="1"> #2 (-2)</label>
+                    <label><input type="checkbox" class="penalty-check" data-index="2"> #3 (-3)</label>
+                    <label><input type="checkbox" class="penalty-check" data-index="3"> #4 (-4)</label>
+                    <label><input type="checkbox" class="penalty-check" data-index="4"> #5 (-5)</label>
+                </div>
+                <button id="manual-end-btn" class="secondary-btn">End Game Early</button>
+            </div>
+
+            <div id="chat-area">
+                <div id="chat-history">
+                    <div class="message system">Game started! Guesser, send your messages.</div>
+                </div>
+                <div id="input-area">
+                    <input type="text" id="guesser-input" placeholder="Type your message here...">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+            
+            <div id="stats">
+                <span>Messages Sent: <span id="msg-count">0</span>/100</span>
+            </div>
+        </div>
+
+        <!-- Result View -->
+        <div id="result-view" class="view hidden">
+            <h2 id="result-title"></h2>
+            <div id="result-details">
+                <p>Messages Sent: <span id="final-msgs">0</span></p>
+                <p>Penalty Deductions: <span id="final-penalties">0</span></p>
+                <hr>
+                <h3>Final Score: <span id="final-score">0</span>%</h3>
+            </div>
+            <div id="penalty-reveal">
+                <h3>The Hidden Penalties Were:</h3>
+                <ul id="penalty-list"></ul>
+            </div>
+            <button id="restart-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
