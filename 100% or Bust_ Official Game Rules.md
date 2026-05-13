@@ -54,3 +54,9 @@ To keep the game fair but challenging, the Mastermind should choose penalties th
 * **Word Choice:** Prohibiting common words or requiring specific ones.  
 * **Structure:** Message length or formatting (e.g., all lowercase).  
 * **Timing:** Replying too quickly or too slowly.
+
+
+
+# **UPCOMING CONTENT**
+* IRL mode (basically just gives you another text box as the other person, so you can message from both sides)
+* Counter penalties, E.g. A unknown way to get a point back as guesser.
